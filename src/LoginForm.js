@@ -23,25 +23,25 @@ function LoginForm({login}) {
     <div>
       <form onSubmit={gatherInput} >
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username" class="font-weight-bold">Username</label>
           <input
             onChange={handleChange}
             type="text"
             name="username"
             value={formData.username}
             id="username"
-            className="form-control col-6 mx-auto"
+            className="form-control"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" class="font-weight-bold">Password</label>
           <input
             onChange={handleChange}
             type="password"
             name="password"
             id="password"
             value={formData.password}
-            className="form-control col-6 mx-auto"
+            className="form-control"
           />
         </div>
         

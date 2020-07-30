@@ -29,7 +29,7 @@ function Company() {
   return (company ?
     <div >
       <h1>{company.name}</h1>
-      <h4>{company.description}</h4>
+      <p>{company.description}</p>
       <div>
         {jobs ? jobs.map(job => (
           <JobCard job={job} key={job.title} appliedStatus={job.state} />

@@ -24,70 +24,70 @@ function RegisterForm({ register }) {
   return (
     <div>
       <form onSubmit={gatherInput}>
-        <div>
-          <label htmlFor="username">Username</label>
+        <div className="form-group">
+          <label htmlFor="username" className="font-weight-bold">Username</label>
           <input
             onChange={handleChange}
             type="text"
             name="username"
             value={formData.username}
             id="username"
-            className="form-control col-6 mx-auto"
+            className="form-control mx-auto"
           />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className="form-group">
+          <label htmlFor="password" className="font-weight-bold">Password</label>
           <input
             onChange={handleChange}
             type="password"
             name="password"
             id="password"
             value={formData.password}
-            className="form-control col-6 mx-auto"
+            className="form-control mx-auto"
           />
         </div>
-        <div>
-          <label htmlFor="first_name">First Name</label>
+        <div className="form-group">
+          <label htmlFor="first_name" className="font-weight-bold">First Name</label>
           <input
             onChange={handleChange}
             type="text"
             name="first_name"
             value={formData.firstName}
             id="first_name"
-            className="form-control col-6 mx-auto"
+            className="form-control mx-auto"
           />
         </div>
-        <div>
-          <label htmlFor="last_name">Last Name</label>
+        <div className="form-group">
+          <label htmlFor="last_name" className="font-weight-bold">Last Name</label>
           <input
             onChange={handleChange}
             type="text"
             name="last_name"
             value={formData.lastName}
             id="last_name"
-            className="form-control col-6 mx-auto"
+            className="form-control mx-auto"
           />
         </div>
-        <div>
-          <label htmlFor="photo_url">Photo URL</label>
+        <div className="form-group">
+          <label htmlFor="photo_url" className="font-weight-bold">Photo URL (Optional)</label>
           <input
             onChange={handleChange}
             type="text"
             name="photo_url"
             value={formData.photo_url}
             id="photo_url"
-            className="form-control col-6 mx-auto"
+            className="form-control mx-auto"
           />
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
+        <div className="form-group">
+          <label htmlFor="email" className="font-weight-bold">Email</label>
           <input
             onChange={handleChange}
             type="text"
             name="email"
             value={formData.email}
             id="email"
-            className="form-control col-6 mx-auto"
+            className="form-control mx-auto"
           />
         </div>
         <button className="btn btn-primary" id="submitButton">Submit</button>

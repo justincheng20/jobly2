@@ -32,10 +32,20 @@ function Login({ handleLogin }) {
   };
 
   return (
-    <div>
-      <button onClick={() => setLoginForm(true)} className="btn btn-primary">Login</button>
-      <button onClick={() => setLoginForm(false)} className="btn btn-primary">Register</button>
-      {loginForm ? <LoginForm login={login} /> : <RegisterForm register={register} />}
+    <div class="container col-md-6 offset-md-3">
+      <div class="d-flex justify-content-end">
+        <div class="btn-group">
+          <button onClick={() => setLoginForm(true)}
+            class={`btn btn-primary ${loginForm ? "active" : ""}`}>Login</button>
+          <button onClick={() => setLoginForm(false)}
+            class={`btn btn-primary ${loginForm ? "" : "active"}`}>Register</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          {loginForm ? <LoginForm login={login} /> : <RegisterForm register={register} />}
+        </div>
+      </div>
     </div>
   );
 };
