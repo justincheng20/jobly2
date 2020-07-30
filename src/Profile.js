@@ -46,7 +46,7 @@ function Profile() {
     }
   };
 
-  if (!user.entries) {
+  if (!user.username) {
     return <Redirect to='/login' />;
   };
 

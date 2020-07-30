@@ -21,8 +21,8 @@ function Company() {
     };
     fetchCompany(handle);
   }, [handle]);
-
-  if (!user.entries) {
+  
+  if (!user.username) {
     return <Redirect to='/login' />;
   };
 

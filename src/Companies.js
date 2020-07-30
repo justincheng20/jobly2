@@ -10,7 +10,7 @@ function Companies() {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    if (user.entries) {
+    if (user.username) {
       async function fetchCompanies() {
         const companiesResult = await JoblyApi.getCompanies();
         setCompanies(companiesResult);
@@ -25,7 +25,7 @@ function Companies() {
     setCompanies(companiesResult);
   };
 
-  if (!user.entries) {
+  if (!user.username) {
     return <Redirect to='/login' />;
   };
 
