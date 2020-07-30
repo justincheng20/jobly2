@@ -10,12 +10,14 @@ function Companies() {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    async function fetchCompanies() {
-      const companiesResult = await JoblyApi.getCompanies();
-      setCompanies(companiesResult);
-    };
-    fetchCompanies();
-  }, []);
+    if (user.entries) {
+      async function fetchCompanies() {
+        const companiesResult = await JoblyApi.getCompanies();
+        setCompanies(companiesResult);
+      };
+      fetchCompanies();
+    }
+  }, [user]);
 
   async function searchCompanies({ searchTerm }) {
     let data = { search: searchTerm };
@@ -23,7 +25,7 @@ function Companies() {
     setCompanies(companiesResult);
   };
 
-  if (!user) {
+  if (!user.entries) {
     return <Redirect to='/login' />;
   };
 
@@ -35,7 +37,7 @@ function Companies() {
           <CompanyCard company={company} key={company.handle} />
         )}
       </div>
-    : "");
+      : "");
 };
 
 export default Companies;

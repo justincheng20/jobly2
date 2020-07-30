@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from './App';
 import JoblyApi from './JoblyApi';
+import { Redirect } from 'react-router-dom';
 
 function Profile() {
 
   const { user, setUser } = useContext(UserContext);
   const { username, first_name, last_name, email, photo_url } = user;
   const [message, setMessage] = useState(null);
-
 
   const handleUpdate = async (data) => {
     let res = await JoblyApi.update(user.username, data);
@@ -44,6 +44,10 @@ function Profile() {
     else {
       setMessage(<div className="alert alert-danger">Unsuccessful</div>);
     }
+  };
+
+  if (!user.entries) {
+    return <Redirect to='/login' />;
   };
 
   return (

@@ -22,7 +22,7 @@ function Company() {
     fetchCompany(handle);
   }, [handle]);
 
-  if (!user) {
+  if (!user.entries) {
     return <Redirect to='/login' />;
   };
 

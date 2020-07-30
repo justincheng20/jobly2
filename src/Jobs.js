@@ -16,7 +16,7 @@ function Jobs() {
     fetchJobs();
   }, []);
 
-  if (!user) {
+  if (!user.entries) {
     return <Redirect to='/login' />;
   };
 
