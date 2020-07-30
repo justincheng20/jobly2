@@ -77,7 +77,7 @@ function RegisterForm({ register }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="photo_url" className="font-weight-bold">Photo URL (Optional)</label>
+          <label htmlFor="photo_url" className="font-weight-bold d-flex justify-content-start">Photo URL (Optional)</label>
           <input
             onChange={handleChange}
             type="text"
@@ -88,7 +88,7 @@ function RegisterForm({ register }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email" className="font-weight-bold">
+          <label htmlFor="email" className="font-weight-bold d-flex justify-content-start">
             Email
             </label>
           <input
