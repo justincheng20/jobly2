@@ -16,8 +16,8 @@ function Company() {
       // Have to make 2 API requests as we do not want to change the backend
       const companyResult = await JoblyApi.getCompany(handle);
       setCompany(companyResult);
-      jobs = await JoblyApi.getJobs();
-      setJobs(jobs.filter(job => job.company_handle === handle));
+      let resp = await JoblyApi.getJobs();
+      setJobs(resp.filter(job => job.company_handle === handle));
     };
     fetchCompany(handle);
   }, [handle]);

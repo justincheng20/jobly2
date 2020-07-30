@@ -5,7 +5,7 @@ import JoblyApi from './JoblyApi';
 function Profile() {
 
   const { user, setUser } = useContext(UserContext);
-  const { username, first_name, last_name, email } = user;
+  const { username, first_name, last_name, email, photo_url } = user;
   const [message, setMessage] = useState(null);
 
 
@@ -64,7 +64,7 @@ function Profile() {
                 type="text"
                 name="first_name"
                 value={formData.first_name}
-                placeholder={user.first_name}
+                placeholder={first_name}
                 id="first_name"
                 className="form-control mx-auto"
               />
@@ -76,7 +76,7 @@ function Profile() {
                 type="text"
                 name="last_name"
                 value={formData.last_name}
-                placeholder={user.last_name}
+                placeholder={last_name}
                 id="last_name"
                 className="form-control mx-auto"
               />
@@ -88,7 +88,7 @@ function Profile() {
                 type="text"
                 name="email"
                 value={formData.email}
-                placeholder={user.email}
+                placeholder={email}
                 id="email"
                 className="form-control mx-auto"
               />
@@ -100,7 +100,7 @@ function Profile() {
                 type="text"
                 name="photo_url"
                 value={formData.photo_url}
-                placeholder={user.photo_url}
+                placeholder={photo_url}
                 id="photo_url"
                 className="form-control mx-auto"
               />

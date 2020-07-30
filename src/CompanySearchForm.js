@@ -22,7 +22,7 @@ function CompanySearchForm({ searchCompanies }) {
     <div className="m-6 col-3 mx-auto">
       <form className="form-inline" onSubmit={gatherInput}>
         <div>
-          <input class="form-control flex-grow"
+          <input className="form-control flex-grow"
             onChange={handleChange}
             type="text"
             name="searchTerm"
