@@ -25,7 +25,9 @@ function RegisterForm({ register }) {
     <div>
       <form onSubmit={gatherInput}>
         <div className="form-group">
-          <label htmlFor="username" className="font-weight-bold">Username</label>
+          <label htmlFor="username" className="font-weight-bold d-flex justify-content-start">
+            Username
+          </label>
           <input
             onChange={handleChange}
             type="text"
@@ -36,7 +38,9 @@ function RegisterForm({ register }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password" className="font-weight-bold">Password</label>
+          <label htmlFor="password" className="font-weight-bold d-flex justify-content-start">
+            Password
+          </label>
           <input
             onChange={handleChange}
             type="password"
@@ -47,7 +51,9 @@ function RegisterForm({ register }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="first_name" className="font-weight-bold">First Name</label>
+          <label htmlFor="first_name" className="font-weight-bold d-flex justify-content-start">
+            First Name
+          </label>
           <input
             onChange={handleChange}
             type="text"
@@ -58,7 +64,9 @@ function RegisterForm({ register }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="last_name" className="font-weight-bold">Last Name</label>
+          <label htmlFor="last_name" className="font-weight-bold d-flex justify-content-start">
+            Last Name
+          </label>
           <input
             onChange={handleChange}
             type="text"
@@ -80,7 +88,9 @@ function RegisterForm({ register }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email" className="font-weight-bold">Email</label>
+          <label htmlFor="email" className="font-weight-bold">
+            Email
+            </label>
           <input
             onChange={handleChange}
             type="text"

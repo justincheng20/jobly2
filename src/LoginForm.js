@@ -23,7 +23,7 @@ function LoginForm({login}) {
     <div>
       <form onSubmit={gatherInput} >
         <div className="form-group">
-          <label htmlFor="username" class="font-weight-bold">Username</label>
+          <label htmlFor="username" className="font-weight-bold d-flex justify-content-start">Username</label>
           <input
             onChange={handleChange}
             type="text"
@@ -34,7 +34,7 @@ function LoginForm({login}) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password" class="font-weight-bold">Password</label>
+          <label htmlFor="password" className="font-weight-bold d-flex justify-content-start">Password</label>
           <input
             onChange={handleChange}
             type="password"
