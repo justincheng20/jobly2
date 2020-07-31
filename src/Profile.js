@@ -18,10 +18,10 @@ function Profile() {
   };
 
   const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    photo_url: "",
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+    photo_url: photo_url,
     password: ""
   });
 
@@ -53,81 +53,77 @@ function Profile() {
   return (
     <div className="container col-md-6 offset-md-3">
       <form onSubmit={gatherInput}>
-          <div className="form-group">
-            <div className="font-weight-bold">
-              Username
+        <div className="form-group">
+          <div className="font-weight-bold d-flex justify-content-start">
+            Username
           </div>
-            <div>
-              {username}
+          <div className="d-flex justify-content-start">
+            {username}
+          </div>
+          <div className="form-group">
+            <label htmlFor="first_name" className="font-weight-bold d-flex justify-content-start">First Name</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="first_name"
+              value={formData.first_name}
+              id="first_name"
+              className="form-control mx-auto"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="last_name" className="font-weight-bold d-flex justify-content-start">Last Name</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="last_name"
+              value={formData.last_name}
+              id="last_name"
+              className="form-control mx-auto"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email" className="font-weight-bold d-flex justify-content-start">Email</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="email"
+              value={formData.email}
+              id="email"
+              className="form-control mx-auto"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="photo_url" className="font-weight-bold d-flex justify-content-start">Photo URL</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="photo_url"
+              value={formData.photo_url}
+              id="photo_url"
+              className="form-control mx-auto"
+            />
+          </div>
 
-            </div>
-            <div>
-              <label htmlFor="first_name" className="font-weight-bold d-flex justify-content-start">First Name</label>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="first_name"
-                value={formData.first_name}
-                placeholder={first_name}
-                id="first_name"
-                className="form-control mx-auto"
-              />
-            </div>
-            <div>
-              <label htmlFor="last_name" className="font-weight-bold d-flex justify-content-start">Last Name</label>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="last_name"
-                value={formData.last_name}
-                placeholder={last_name}
-                id="last_name"
-                className="form-control mx-auto"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="font-weight-bold d-flex justify-content-start">Email</label>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="email"
-                value={formData.email}
-                placeholder={email}
-                id="email"
-                className="form-control mx-auto"
-              />
-            </div>
-            <div>
-              <label htmlFor="photo_url" className="font-weight-bold d-flex justify-content-start">Photo URL</label>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="photo_url"
-                value={formData.photo_url}
-                placeholder={photo_url}
-                id="photo_url"
-                className="form-control mx-auto"
-              />
-            </div>
+          <div className="form-group">
+            <label htmlFor="password" className="font-weight-bold d-flex justify-content-start">Re-enter password</label>
+            <input
+              onChange={handleChange}
+              type="password"
+              name="password"
+              value={formData.password}
+              id="password"
+              className="form-control mx-auto"
+            />
+          </div>
 
-            <div>
-              <label htmlFor="password" className="font-weight-bold d-flex justify-content-start">Re-enter password</label>
-              <input
-                onChange={handleChange}
-                type="password"
-                name="password"
-                value={formData.password}
-                id="password"
-                className="form-control mx-auto"
-              />
-            </div>
-
-            {message ? message : null}
-            
-              <button className="btn btn-primary" id="submitButton">Submit</button>
-            </div>
-      </form>
+          {message ? message : null}
+          <div className = "d-flex justify-content-end">
+          <button className="btn btn-primary " id="submitButton">Save Changes</button>
+          </div>
         </div>
+      </form>
+    </div>
   )
 }
 

@@ -5,7 +5,11 @@ import React, { useState } from 'react';
 function RegisterForm({ register }) {
   const [formData, setFormData] = useState({
     username: "",
-    password: ""
+    password: "",
+    firstName: "",
+    lastName: "",
+    photo_url: "",
+    email: "",
   });
 
   const handleChange = evt => {
@@ -57,7 +61,7 @@ function RegisterForm({ register }) {
           <input
             onChange={handleChange}
             type="text"
-            name="first_name"
+            name="firstName"
             value={formData.firstName}
             id="first_name"
             className="form-control mx-auto"
@@ -70,14 +74,16 @@ function RegisterForm({ register }) {
           <input
             onChange={handleChange}
             type="text"
-            name="last_name"
-            value={formData.lastName}
+            name="lastName"
+            value={formData.last_name}
             id="last_name"
             className="form-control mx-auto"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="photo_url" className="font-weight-bold d-flex justify-content-start">Photo URL (Optional)</label>
+          <label htmlFor="photo_url" className="font-weight-bold d-flex justify-content-start">
+            Photo URL (Optional)
+          </label>
           <input
             onChange={handleChange}
             type="text"

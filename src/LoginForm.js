@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-function LoginForm({login}) {
+function LoginForm({ login }) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -44,8 +44,9 @@ function LoginForm({login}) {
             className="form-control"
           />
         </div>
-        
-        <button id="submitButton" className="btn btn-primary">Submit</button>
+        <div className = "d-flex justify-content-end">
+          <button id="submitButton" className="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
   );
