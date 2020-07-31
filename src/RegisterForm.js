@@ -11,6 +11,7 @@ function RegisterForm({ register }) {
     photo_url: "",
     email: "",
   });
+  const [message, setMessage] = useState(null);
 
   const handleChange = evt => {
     const { name, value } = evt.target;
@@ -20,9 +21,13 @@ function RegisterForm({ register }) {
     }));
   };
 
-  const gatherInput = evt => {
+  const gatherInput = async (evt) => {
     evt.preventDefault();
-    register(formData);
+    try {
+      await register(formData);
+    } catch {
+      setMessage(<div className="alert alert-danger">Unsuccessful</div>);
+    }
   };
 
   return (
@@ -106,6 +111,7 @@ function RegisterForm({ register }) {
             className="form-control mx-auto"
           />
         </div>
+        {message ? message : null}
         <button className="btn btn-primary" id="submitButton">Submit</button>
       </form>
     </div>

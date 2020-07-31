@@ -5,6 +5,7 @@ function LoginForm({ login }) {
     username: "",
     password: "",
   });
+  const [message, setMessage] = useState(null);
 
   const handleChange = evt => {
     const { name, value } = evt.target;
@@ -14,9 +15,13 @@ function LoginForm({ login }) {
     }));
   };
 
-  const gatherInput = evt => {
+  const gatherInput = async (evt) => {
     evt.preventDefault();
-    login(formData);
+    try {
+      await login(formData);
+    } catch {
+      setMessage(<div className="alert alert-danger">Unsuccessful</div>);
+    }
   };
 
   return (
@@ -44,7 +49,8 @@ function LoginForm({ login }) {
             className="form-control"
           />
         </div>
-        <div className = "d-flex justify-content-end">
+        {message ? message : null}
+        <div className="d-flex justify-content-end">
           <button id="submitButton" className="btn btn-primary">Submit</button>
         </div>
       </form>
