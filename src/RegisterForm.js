@@ -112,7 +112,9 @@ function RegisterForm({ register }) {
           />
         </div>
         {message ? message : null}
-        <button className="btn btn-primary" id="submitButton">Submit</button>
+        <div className="d-flex justify-content-end">
+          <button className="btn btn-primary" id="submitButton">Submit</button>
+        </div>
       </form>
     </div>
   );
