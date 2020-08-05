@@ -30,14 +30,15 @@ function Companies() {
   };
 
   return (
-    companies.length ?
-      <div>
-        <CompanySearchForm searchCompanies={searchCompanies} />
-        {companies.map(company =>
+    <div>
+      <CompanySearchForm searchCompanies={searchCompanies} />
+      {companies.length ?
+        companies.map(company =>
           <CompanyCard company={company} key={company.handle} />
-        )}
-      </div>
-      : "");
+        )
+        : "No results found"}
+    </div>
+  )
 };
 
 export default Companies;
