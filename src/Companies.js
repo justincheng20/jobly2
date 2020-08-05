@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 
 function Companies() {
   const [companies, setCompanies] = useState([]);
-  const { user } = useContext(UserContext);
+  const { user, loggedIn } = useContext(UserContext);
 
   useEffect(() => {
     if (user.username) {
@@ -24,8 +24,8 @@ function Companies() {
     const companiesResult = await JoblyApi.getCompanies(data);
     setCompanies(companiesResult);
   };
-
-  if (!user.username) {
+  
+  if (!loggedIn) {
     return <Redirect to='/login' />;
   };
 

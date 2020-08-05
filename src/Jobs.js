@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 
 function Jobs() {
   const [jobs, setJobs] = useState([]);
-  const { user } = useContext(UserContext);
+  const { user, loggedIn } = useContext(UserContext);
 
   useEffect(() => {
     async function fetchJobs() {
@@ -16,7 +16,7 @@ function Jobs() {
     fetchJobs();
   }, []);
 
-  if (!user.username) {
+  if (!loggedIn) {
     return <Redirect to='/login' />;
   };
 

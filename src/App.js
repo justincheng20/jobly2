@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ user, setUser, loggedIn, setLoggedIn }}>
           <NavBar loggedIn={loggedIn} handleLogOut={handleLogOut} />
           <Routes loggedIn={loggedIn} handleLogin={handleLogin} />
         </UserContext.Provider>

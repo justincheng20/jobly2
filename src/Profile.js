@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 
 function Profile() {
 
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser, loggedIn } = useContext(UserContext);
   const { username, first_name, last_name, email, photo_url } = user;
   const [message, setMessage] = useState(null);
 
@@ -46,7 +46,7 @@ function Profile() {
     }
   };
 
-  if (!user.username) {
+  if (!loggedIn) {
     return <Redirect to='/login' />;
   };
 
